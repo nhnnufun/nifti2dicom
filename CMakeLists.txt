@@ -41,27 +41,6 @@ include_directories(${TCLAP_INCLUDE_DIRS})
 find_package(ITK REQUIRED)
 include(${ITK_USE_FILE})
 
-#Check VTK Library [Visualization ToolKit]
-find_package(VTK REQUIRED)
-include(${VTK_USE_FILE})
-
-#TODO Check QVTK
-
-if(VTK_QT_VERSION EQUAL 5)
-    set(Nifti2Dicom_QT_VERSION 5)
-
-    #Check Qt5 Library [Qt5]
-    find_package(Qt5 COMPONENTS Core Gui Widgets)
-else()
-    set(Nifti2Dicom_QT_VERSION 4)
-
-    #Check Qt4 Library [Qt4] (4.4.0)
-    set(QT_USE_IMPORTED_TARGETS TRUE)
-    find_package(Qt4 4.4.0 REQUIRED)
-
-endif()
-
-
 configure_file(${CMAKE_SOURCE_DIR}/Nifti2DicomConfig.h.cmake ${CMAKE_BINARY_DIR}/Nifti2DicomConfig.h)
 
 include_directories(${CMAKE_BINARY_DIR})
@@ -82,8 +61,6 @@ if(WIN32 OR APPLE)
     set(DOCS_FILES AUTHORS
                    COPYING
                    COPYING.ITK
-                   COPYING.VTK
-                   packaging/COPYING.Qt4
                    NEWS
                    README.md)
     set(DOCS_FILES_DESTINATION .)
