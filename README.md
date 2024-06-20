@@ -14,10 +14,8 @@ that can be imported in a PACS.
 
 Source code is in directory is split into 2 parts:
  - src/core (command line tool)
- - src/gui (GUI)
 
-
-To build Nifti2Dicom you need:
+To build this Nifti2Dicom version you need:
 
  * Command line tools:
    - Insight Toolkit (ITK) 3.17 or later using GDCM 2.xx
@@ -25,10 +23,6 @@ To build Nifti2Dicom you need:
      produced files might be incorrect, see
      [ITK-281](https://itk.icts.uiowa.edu/jira/browse/ITK-281))
    - Templatized command-line argument parser for C++ (TCLAP) 1.2 or later
-
- * GUI
-   - Qt4 (4.4 or later)
-   - Visualization toolkit (VTK) 5 or 6 with Qt4 support enabled
 
  * Documentation
    - Doxygen
